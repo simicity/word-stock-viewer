@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel='stylesheet', href='/stylesheets/kathamo.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 Add Word
+    div
+      form(method='post' action='/wordstock/add')
+        label(for='word') Word
+        input(id='word' class='ui-full-width' type='text' name='word')
+        br
+        label(for='url') Url
+        input(id='url' class='ui-full-width' type='text' name='url')
+        br
+        br
+        button(data-role='button' type='submit') Add
+    div
+      a(href='/wordstock') Back

@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel='stylesheet', href='/stylesheets/kathamo.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 Word Stock
+    div(class='container')
+      a(data-role='button' class='navbar-collapse pull-right' href='/wordstock/add') Add
+    if cursors
+      div(class='table-responsive')
+        table
+          thead
+            tr
+              th Word
+              th Url 
+              th
+              th
+          tbody
+            tr
+            each row in cursors
+              - key = row.key
+              - url = row.url
+              tr
+                td #{row.word}
+                td
+                  a(href=url) #{row.url}
+                td
+                  a(href='/wordstock/'+key+'/modify' type='button') Edit
+                td
+                  a(href='/wordstock/'+key+'/delete' type='button') Delete
+    else
+      p no data
